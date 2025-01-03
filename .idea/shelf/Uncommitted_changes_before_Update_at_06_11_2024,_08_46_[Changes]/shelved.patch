@@ -1,0 +1,64 @@
+Index: app/src/main/res/layout/activity_camera.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\">\n    <TextureView\n        android:id=\"@+id/textureView\"\n        android:layout_width=\"316dp\"\n        android:layout_height=\"330dp\"\n        android:layout_marginStart=\"47dp\"\n        android:layout_marginTop=\"38dp\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\" />\n\n    <Button\n        android:id=\"@+id/buttonCam\"\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"wrap_content\"\n        android:layout_marginStart=\"136dp\"\n        android:layout_marginTop=\"48dp\"\n        android:text=\"@string/start_camera\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@+id/textureView\" />\n\n    <Button\n        android:id=\"@+id/buttonStopCam\"\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"wrap_content\"\n        android:layout_marginStart=\"136dp\"\n        android:layout_marginTop=\"40dp\"\n        android:text=\"Stop Camera\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@+id/buttonCam\" />\n\n\n</androidx.constraintlayout.widget.ConstraintLayout>
+===================================================================
+diff --git a/app/src/main/res/layout/activity_camera.xml b/app/src/main/res/layout/activity_camera.xml
+--- a/app/src/main/res/layout/activity_camera.xml	
++++ b/app/src/main/res/layout/activity_camera.xml	
+@@ -1,37 +1,33 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+-    xmlns:tools="http://schemas.android.com/tools"
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
++
++    <!-- SurfaceView pour afficher le flux de la caméra -->
+     <TextureView
+         android:id="@+id/textureView"
+-        android:layout_width="316dp"
+-        android:layout_height="330dp"
+-        android:layout_marginStart="47dp"
+-        android:layout_marginTop="38dp"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent" />
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:layout_centerInParent="true" />
+ 
++    <!-- Bouton pour démarrer et arrêter l'enregistrement -->
+     <Button
+         android:id="@+id/buttonCam"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+-        android:layout_marginStart="136dp"
+-        android:layout_marginTop="48dp"
+-        android:text="@string/start_camera"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/textureView" />
++        android:layout_alignParentBottom="true"
++        android:layout_centerHorizontal="true"
++        android:layout_marginBottom="16dp"
++        android:text="Start Recording" />
+ 
+     <Button
+         android:id="@+id/buttonStopCam"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+-        android:layout_marginStart="136dp"
+-        android:layout_marginTop="40dp"
+-        android:text="Stop Camera"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/buttonCam" />
++        android:layout_alignParentBottom="true"
++        android:layout_centerHorizontal="true"
++        android:layout_marginBottom="86dp"
++        android:text="Stop Recording" />
+ 
+ 
+-</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
++</RelativeLayout>
+\ No newline at end of file
